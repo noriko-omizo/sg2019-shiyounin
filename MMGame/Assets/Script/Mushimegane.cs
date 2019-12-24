@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
 public class Mushimegane : MonoBehaviour {
+	[SerializeField] GameObject chatCanvas;
+	[SerializeField] GameObject arCanvas;
 
 	public void ButtonClicked () {
-		SceneManager.LoadScene("ARScene");
+		chatCanvas.SetActive(false);
+		arCanvas.SetActive(true);
 	}
 }

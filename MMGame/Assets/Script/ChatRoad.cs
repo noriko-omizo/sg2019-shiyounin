@@ -6,9 +6,12 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
 public class ChatRoad : MonoBehaviour {
+	[SerializeField] GameObject chatCanvas;
+	[SerializeField] GameObject arCanvas;
 
 	public void ButtonClicked () {
-		SceneManager.LoadScene("Chattest");
+		chatCanvas.SetActive(true);
+		arCanvas.SetActive(false);
 	}
 }
 

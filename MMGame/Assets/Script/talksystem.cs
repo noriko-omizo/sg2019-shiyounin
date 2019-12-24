@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 
 public class talksystem : MonoBehaviour {
@@ -10,8 +11,14 @@ public class talksystem : MonoBehaviour {
 	[SerializeField] InputField input;
 	[SerializeField] RectTransform timeline;
 	[SerializeField] RectTransform meFukidashi;
-	[SerializeField] RectTransform toFukidashi;
+	[SerializeField] RectTransform toFukidashi1;
+	[SerializeField] RectTransform toFukidashi2;
+	[SerializeField] RectTransform toFukidashi3;
 	[SerializeField] Player player;
+	[SerializeField] GameObject videoPanel;
+
+	public VideoClip videoClip;
+//	public GameObject screen;
 
 //	[SerializeField] Text elementOriginalText1;
 //	[SerializeField] RectTransform content2;
@@ -29,6 +36,7 @@ public class talksystem : MonoBehaviour {
 
 	bool reply1 = true;
 	bool reply2 = true;
+	bool reply3 = true;
 	bool hint1 = true;
 
 //		void Awake()
@@ -44,8 +52,19 @@ public class talksystem : MonoBehaviour {
 //		Fukidashi ();
 //	}
 
+	void start (){
+//		videoPanel.SetActive(false);
+//		var videoPlayer = videoPanel.AddComponent<VideoPlayer>();	// videoPlayeコンポーネントの追加
+//
+//		videoPlayer.source = VideoSource.VideoClip;	// 動画ソースの設定
+//		videoPlayer.clip = videoClip;
+	}
+
 	public void OnSubmit()
 	{
+		
+//		var videoPlayer = GetComponent<VideoPlayer>();
+
 		string userText = input.text;
 		if (userText == "") {
 			return;
@@ -56,20 +75,28 @@ public class talksystem : MonoBehaviour {
 
 		if(userText == ("こんにちは") && reply1)
 		{
-			CreateFukidashi (toFukidashi, "こんばんは");
+			CreateFukidashi (toFukidashi1, "こんばんは");
 			player.hasKey1 = true;
 			reply1 = false;
 		}
 
 		if(userText == ("ありがとう") && player.hasKey1 && reply2) {
-			CreateFukidashi (toFukidashi, "どういたしまして");
+			CreateFukidashi (toFukidashi2, "どういたしまして");
 			player.hasKey2 = true;
 			reply2 = false;
 		}
 
-		else if (input.text == ("ヒント") && hint1) {
-			CreateFukidashi (toFukidashi, "ヒントだよ");
+		else if (userText == ("ヒント") && hint1) {
+			CreateFukidashi (toFukidashi3, "ヒントだよ");
 			hint1 = false;
+		}
+
+		if(userText == ("あいことば")) {
+//			&& player.hasKey2 && reply3
+			
+//			videoPanel.SetActive(true);
+//			videoPlayer.Play();
+			reply3 = false;
 		}
 
 //		Gamereset ();

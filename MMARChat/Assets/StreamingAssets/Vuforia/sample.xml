@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="nazo5-mark" size="100.000000 137.191849" />
+    <ImageTarget name="nazo4-mark" size="100.000000 137.339050" />
+    <ImageTarget name="nazo3-mark" size="100.000000 142.274673" />
+    <ImageTarget name="nazo2-mark" size="100.000000 140.379257" />
+    <ImageTarget name="nazo1-mark" size="100.000000 196.393448" />
+  </Tracking>
+</QCARConfig>
